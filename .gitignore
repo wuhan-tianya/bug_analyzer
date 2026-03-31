@@ -8,3 +8,10 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Local SQLite database (do not commit)
+data/app.db
+
+# Frontend dependencies / build artifacts
+frontend/node_modules/
+frontend/dist/
