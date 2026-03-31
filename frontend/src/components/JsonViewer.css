@@ -1,0 +1,76 @@
+/* ─── JSON Viewer Component Styles ─── */
+
+.json-viewer-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.json-viewer-toolbar {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--space-xs);
+    margin-bottom: var(--space-xs);
+}
+
+.json-toggle-btn,
+.json-copy-btn {
+    font-size: 0.75rem;
+    padding: 2px var(--space-sm);
+}
+
+.json-viewer.json-collapsed {
+    max-height: 40px;
+    overflow: hidden;
+}
+
+/* Syntax highlights */
+.jv-key {
+    color: #a78bfa;
+}
+
+.jv-string {
+    color: #86efac;
+}
+
+.jv-number {
+    color: #fbbf24;
+}
+
+.jv-boolean {
+    color: #60a5fa;
+}
+
+.jv-null {
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+.jv-bracket {
+    color: var(--text-secondary);
+}
+
+.jv-colon {
+    color: var(--text-muted);
+}
+
+.jv-toggle {
+    cursor: pointer;
+    position: relative;
+}
+
+.jv-toggle:hover {
+    color: var(--accent-secondary);
+}
+
+.jv-ellipsis {
+    color: var(--text-muted);
+    font-style: italic;
+    font-size: 0.75rem;
+    margin-left: 4px;
+}
+
+.jv-collapsed-hint {
+    color: var(--text-muted);
+    font-style: italic;
+    font-size: 0.85rem;
+}

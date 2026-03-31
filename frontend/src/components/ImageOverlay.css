@@ -1,0 +1,166 @@
+/* ─── Image Overlay Styles ─── */
+
+.image-overlay-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.image-overlay-wrapper {
+    position: relative;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    line-height: 0;
+}
+
+.overlay-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.overlay-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.overlay-hotspot {
+    fill: transparent;
+    stroke: transparent;
+    stroke-width: 2;
+    cursor: pointer;
+    pointer-events: all;
+    transition: fill 0.15s ease, stroke 0.15s ease;
+}
+
+.overlay-hotspot:hover,
+.overlay-hotspot.hovered {
+    fill: rgba(124, 58, 237, 0.15);
+    stroke: rgba(167, 139, 250, 0.8);
+    stroke-width: 2;
+}
+
+.overlay-hotspot.selected {
+    fill: rgba(124, 58, 237, 0.25);
+    stroke: #a78bfa;
+    stroke-width: 3;
+    stroke-dasharray: none;
+    animation: pulse-border 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-border {
+
+    0%,
+    100% {
+        stroke-opacity: 1;
+    }
+
+    50% {
+        stroke-opacity: 0.5;
+    }
+}
+
+.overlay-label-bg {
+    fill: rgba(10, 10, 26, 0.9);
+    stroke: var(--accent-secondary);
+    stroke-width: 1;
+}
+
+.overlay-label-text {
+    fill: var(--text-primary);
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 500;
+    pointer-events: none;
+}
+
+/* Perception count badge */
+.perception-count {
+    position: absolute;
+    top: var(--space-sm);
+    right: var(--space-sm);
+    padding: 2px var(--space-sm);
+    background: rgba(10, 10, 26, 0.85);
+    color: var(--accent-secondary);
+    font-size: 0.7rem;
+    font-weight: 600;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--border-accent);
+    backdrop-filter: blur(8px);
+}
+
+/* Fallback list view */
+.perception-list {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.perception-list-title {
+    padding: var(--space-sm) var(--space-md);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.perception-list-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    width: 100%;
+    padding: var(--space-sm) var(--space-md);
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    cursor: pointer;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    color: var(--text-primary);
+    text-align: left;
+    transition: background var(--transition-fast);
+}
+
+.perception-list-item:last-child {
+    border-bottom: none;
+}
+
+.perception-list-item:hover {
+    background: var(--bg-card-hover);
+}
+
+.perception-list-item.selected {
+    background: rgba(124, 58, 237, 0.1);
+    border-left: 3px solid var(--accent-primary);
+}
+
+.perception-item-id {
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    flex-shrink: 0;
+}
+
+.perception-item-content {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.perception-item-confidence {
+    flex-shrink: 0;
+    padding: 1px 6px;
+    background: var(--success-bg);
+    color: var(--success);
+    border-radius: var(--radius-full);
+    font-size: 0.7rem;
+    font-weight: 600;
+}
